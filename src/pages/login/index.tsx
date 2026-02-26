@@ -5,20 +5,20 @@ import {
     Image,
     TextInput
 } from 'react-native';
-import {style} from './styles';
-import Logo from 'src\assets\login.png';
-export default function Login(){
-    return(
+import { style } from './styles';
+import Logo from '../../assets/logo.png';
+export default function Login() {
+    return (
         <View style={style.container}>
-            <View style= {style.boxTop}>
-                <Image source= {Logo} />
+            <View style={style.boxTop}>
+                <Image source={Logo} />
                 <Text>Bem Vindo!!!</Text>
             </View>
             <View style={style.boxMid}>
                 <Text>Endereço de E-mail</Text>
-                <TextInput style={style.boxInput}/>
+                <TextInput style={style.boxInput} />
                 <Text> Coloque sua Senha! </Text>
-                <TextInput style={style.boxInput}/>
+                <TextInput style={style.boxInput} />
             </View>
             <View style={style.boxBottom}>
                 <Text>Bottom</Text>
