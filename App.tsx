@@ -1,32 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './src/pages/login';
-import Cadastro from './src/pages/cadastro';
 import React, { useCallback, useEffect } from 'react';
-import * as SplashScreen from 'expo-splash-screen';
-import { useFonts, PTSerif_400Regular, PTSerif_700Bold } from '@expo-google-fonts/pt-serif';
+import { createStackNavigator } from '@react-navigation/stack';
+import AppNavagation from './src/pages/AppNavagation';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+const Stack = createStackNavigator();
+
 
 // Impede a tela de splash de sumir antes das fontes carregarem
-SplashScreen.preventAutoHideAsync();
+//SplashScreen.preventAutoHideAsync();
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    'PTSerif-Regular': PTSerif_400Regular,
-    'PTSerif-Bold': PTSerif_700Bold,
-  });
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
-    return null;
-  }
+  
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Cadastro />
-    </View>
+   <GestureHandlerRootView style={{flex: 1}}>
+    <AppNavagation />
+   </GestureHandlerRootView>
   );
 }
 
@@ -34,6 +22,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
 
   },
 });

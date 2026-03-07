@@ -1,63 +1,87 @@
 import { Dimensions, StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
-    container: {
-        backgroundColor: "#a2c785",
-        borderRadius: 20
-    },
-    boxTop: {
-        alignItems: "center",
-        justifyContent: "center",
-
+    // Container principal para ocupar a tela toda
+    mainContainer: {
+        flex: 1,
+        backgroundColor: '#F0F4F8', // Azul bem clarinho de fundo
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20
     },
     image: {
-        width: 100,
-        height: 100,
-        marginHorizontal: 100,
-        marginBottom: 30
+        width: 120,
+        height: 120,
+        marginBottom: 20,
+        resizeMode: 'contain'
     },
     textWelcome: {
-        fontFamily: 'PTSerif-Bold',
-        fontSize: 24,
-        fontWeight: 'bold', // Muda o peso da fonte
-        marginTop: 10,
-        color: '#333'
+        fontSize: 28,
+        fontWeight: 'bold',
+        color: '#1A365D', // Azul marinho escuro
+        marginBottom: 30,
+    },
+    container: {
+        width: '100%',
+        backgroundColor: "#FFF",
+        borderRadius: 25,
+        padding: 25,
+        // Sombra para iOS e Android
+        elevation: 10,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 0.1,
+        shadowRadius: 10,
     },
     boxMid: {
-        marginTop: 10,
-        paddingHorizontal: 80, // Melhor que marginLeft para centralizar
-        height: Dimensions.get("window").height / 3,
+        width: '100%',
     },
     labelInput: {
-        fontFamily: 'PTSerif-Regular',
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: '600',
-        marginBottom: 5,
+        marginBottom: 8,
         marginTop: 15,
-        color: '#444'
+        color: '#2D3748', // Cinza azulado
+    },
+    inputArea: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: "#EDF2F7", // Azul acinzentado claro
+        borderRadius: 12,
+        paddingHorizontal: 15,
+        borderWidth: 1,
+        borderColor: '#E2E8F0',
     },
     boxInput: {
         height: 50,
-        width: '100%',
-        borderRadius: 10, // Arredondado mais suave
-        backgroundColor: "#f8f4e4",
-        paddingHorizontal: 15,
-        borderWidth: 1,
-        borderColor: '#ccc',
-        fontSize: 16
+        flex: 1,
+        fontSize: 16,
+        color: '#2D3748',
+        marginLeft: 10
     },
     button: {
-        backgroundColor: '#4CAF50', // Cor sólida bonita
-        height: 50,
-        borderRadius: 10,
+        backgroundColor: '#3182CE', // Azul Royal
+        height: 55,
+        borderRadius: 12,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 30,
-        elevation: 3, // Sombrinha no Android
+        marginTop: 35,
+        elevation: 4,
     },
     buttonText: {
         color: '#FFF',
         fontSize: 18,
+        fontWeight: 'bold',
+        letterSpacing: 1
+    },
+    textBottom: {
+        marginTop: 20,
+        textAlign: 'center',
+        color: '#4A5568',
+        fontSize: 14
+    },
+    textBottomBold: {
+        color: '#3182CE',
         fontWeight: 'bold'
     }
 });
