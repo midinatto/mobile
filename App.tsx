@@ -1,29 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React, { useCallback, useEffect } from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import AppNavagation from './src/pages/AppNavagation';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+// Ajuste esse caminho se o seu App.tsx estiver em outro lugar!
+import AppNavigation from './src/pages/AppNavagation'; 
 
-const Stack = createStackNavigator();
-
-
-// Impede a tela de splash de sumir antes das fontes carregarem
-//SplashScreen.preventAutoHideAsync();
 export default function App() {
-  
   return (
-   <GestureHandlerRootView style={{flex: 1}}>
-    <AppNavagation />
-   </GestureHandlerRootView>
+    <NavigationContainer>
+      <AppNavigation />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-
-  },
-});
